@@ -21,15 +21,15 @@ class TestNubbinBattery(unittest.TestCase):
 
 class TestSpindlerBattery(unittest.TestCase):
 
-    # needs_service every 2 years or 730 days
+    # needs_service every 3 years or 1095 days
     def test_needs_service(self):
         current_date = date.today()
-        last_service_date = current_date - timedelta(days=729)
+        last_service_date = current_date - timedelta(days=1094)
 
         battery = SpindlerBattery(last_service_date, current_date)
         self.assertFalse(battery.needs_service())
 
-        last_service_date = current_date - timedelta(days=731)
+        last_service_date = current_date - timedelta(days=1096)
 
         battery = SpindlerBattery(last_service_date, current_date)
         self.assertTrue(battery.needs_service())

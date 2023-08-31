@@ -1,5 +1,4 @@
-from .interfaces import Serviceable
+from .interfaces import Serviceable, Engine, Battery, Tires
 
-from .interfaces import Engine
 
-from .interfaces import Battery
+
